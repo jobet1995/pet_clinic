@@ -1,0 +1,75 @@
+{% load static %}
+<footer class="footer-custom">
+    <div class="container footer-top">
+        <div class="row gy-5">
+            <div class="col-lg-4 col-md-6">
+                <a class="footer-brand" href="/">
+                    <img src="{% static 'images/logo.png' %}" alt="PetClinic Logo" class="footer-logo me-2">
+                    <span>PetClinic</span>
+                </a>
+                <p class="footer-desc">Providing compassionate, advanced, and professional veterinary care for your beloved pets. Our dedicated team is always here for your animal companions.</p>
+                <div class="social-links d-flex gap-3">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-6">
+                <h2 class="footer-heading">Quick Links</h2>
+                <ul class="footer-links list-unstyled">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/team/">Our Team</a></li>
+                    <li><a href="/faqs/">FAQs</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-6">
+                <h2 class="footer-heading">Services</h2>
+                <ul class="footer-links list-unstyled">
+                    <li><a href="/services/checkups/">Checkups</a></li>
+                    <li><a href="/services/vaccines/">Vaccinations</a></li>
+                    <li><a href="/services/grooming/">Grooming</a></li>
+                    <li><a href="/services/">All Services</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h2 class="footer-heading">Contact Details</h2>
+                <ul class="footer-info list-unstyled">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Vet Clinic Way, Suite A, San Francisco, CA 94103</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>(555) 123-4567</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@petclinic.local</span>
+                    </li>
+                </ul>
+                <div class="emergency-badge mt-3">
+                    <i class="fas fa-ambulance me-2"></i>
+                    <span>24/7 Emergencies: (555) 911-PETS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container d-flex flex-md-row flex-column justify-content-between align-items-center gap-3">
+            <span class="copyright">&copy; 2026 PetClinic. All rights reserved.</span>
+            <div class="footer-legal d-flex gap-4">
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/terms/">Terms of Use</a>
+            </div>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" aria-label="Back to top">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+    </div>
+</footer>

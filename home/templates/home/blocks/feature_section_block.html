@@ -1,0 +1,31 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+<link rel="stylesheet" href="{% static 'css/feature.css' %}">
+<section class="feature-section py-6 overflow-hidden bg-light border-bottom">
+    <div class="container">
+        <div class="row align-items-center g-5 {% if self.image_alignment == 'right' %}flex-row-reverse{% endif %}">
+            <div class="col-lg-6 feature-image-wrapper">
+                <div class="position-relative d-inline-block w-100">
+                    <div class="feature-image-decoration bg-teal rounded-4 position-absolute w-100 h-100 top-0 start-0 z-0 transform-decor"></div>
+                    {% if self.image %}
+                        {% image self.image fill-600x450 as feat_img %}
+                        <img src="{{ feat_img.url }}" class="img-fluid rounded-4 shadow-lg position-relative z-1 w-100 object-fit-cover feature-img" alt="{{ self.heading }}" style="min-height: 350px;">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6 feature-text-wrapper">
+                <div class="ps-lg-4 px-2">
+                    <h2 class="display-5 fw-bold text-dark mb-4 feature-heading">{{ self.heading }}</h2>
+                    <div class="lead text-muted mb-4 feature-text">
+                        {{ self.text|richtext }}
+                    </div>
+                    {% if self.button and self.button.text %}
+                        <a href="{% if self.button.link_page %}{{ self.button.link_page.url }}{% elif self.button.link_url %}{{ self.button.link_url }}{% else %}#{% endif %}" class="btn btn-teal text-white btn-lg rounded-pill px-4 fw-semibold mt-2 shadow-sm feature-btn">
+                            {{ self.button.text }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{% static 'js/feature.js' %}"></script>

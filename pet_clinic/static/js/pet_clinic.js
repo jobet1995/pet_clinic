@@ -101,19 +101,29 @@ class PetClinicApp extends ApiClient {
         }, 5000);
     }
 
-    async verifyConnection() {
-        try {
-            await this.get("https://jsonplaceholder.typicode.com/posts/1");
-            this.showNotification("Application connected to network services.", "success");
-        } catch (e) {
-            this.showNotification("Network diagnostics detected connectivity warnings.", "warning");
-        }
-    }
-
     init() {
         this.setupCsrf();
+        new NavbarController().init();
+        if (window.HeroManager) {
+            this.hero = new HeroManager(this);
+        }
+        if (window.ServicesManager) {
+            this.services = new ServicesManager(this);
+        }
+        if (window.TestimonialsManager) {
+            this.testimonials = new TestimonialsManager(this);
+        }
+        if (window.StaffManager) {
+            this.staff = new StaffManager(this);
+        }
+        if (window.FaqManager) {
+            this.faq = new FaqManager(this);
+        }
+        if (window.FeatureManager) {
+            this.feature = new FeatureManager(this);
+        }
         console.log("%c[System] PetClinic OOP Architecture Loaded.", "color: #9b59b6; font-weight: bold; font-size: 12px;");
-        this.verifyConnection();
+        this.get("https://jsonplaceholder.typicode.com/posts/1");
     }
 }
 

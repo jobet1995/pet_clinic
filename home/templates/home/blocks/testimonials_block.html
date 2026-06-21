@@ -1,0 +1,89 @@
+{% load static wagtailimages_tags %}
+<link rel="stylesheet" href="{% static 'css/testimonials.css' %}">
+<section class="testimonials-section py-6 bg-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-dark mb-3">{{ self.heading }}</h2>
+            {% if self.subheading %}
+                <p class="lead text-muted max-w-2xl mx-auto">{{ self.subheading }}</p>
+            {% endif %}
+        </div>
+        <div class="d-flex justify-content-center gap-2 mb-5 testimonial-filters">
+            <button class="btn btn-outline-teal rounded-pill active" data-filter="all">All Pets</button>
+            <button class="btn btn-outline-teal rounded-pill" data-filter="dog">Dogs</button>
+            <button class="btn btn-outline-teal rounded-pill" data-filter="cat">Cats</button>
+            <button class="btn btn-outline-teal rounded-pill" data-filter="bird">Birds</button>
+            <button class="btn btn-outline-teal rounded-pill" data-filter="other">Others</button>
+        </div>
+        <div class="row g-4 testimonial-grid mb-5">
+            {% for item in self.testimonials %}
+                <div class="col-md-6 col-lg-4 testimonial-item" data-pet-type="{{ item.pet_type }}">
+                    <div class="card h-100 border-0 shadow-sm testimonial-card p-4 transition-all">
+                        <div class="quote-icon text-teal-light mb-3">
+                            <i class="fa-solid fa-quote-left fa-3x"></i>
+                        </div>
+                        <p class="text-muted fst-italic mb-4 flex-grow-1">"{{ item.quote }}"</p>
+                        <div class="d-flex align-items-center gap-3">
+                            {% if item.avatar %}
+                                {% image item.avatar fill-50x50 as av_img %}
+                                <img src="{{ av_img.url }}" class="rounded-circle avatar shadow-sm" alt="{{ item.client_name }}" width="50" height="50">
+                            {% else %}
+                                <div class="rounded-circle avatar-placeholder bg-teal-light text-teal d-flex align-items-center justify-content-center fw-bold shadow-sm" style="width: 50px; height: 50px;">
+                                    {{ item.client_name|slice:":1" }}
+                                </div>
+                            {% endif %}
+                            <div>
+                                <h4 class="h6 fw-bold mb-0 text-dark">{{ item.client_name }}</h4>
+                                <span class="text-muted small">Owner of {{ item.pet_name }} ({{ item.get_pet_type_display }})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-lg p-4 p-md-5 review-form-card">
+                    <h3 class="h4 fw-bold text-dark mb-4 text-center">Share Your Clinic Experience</h3>
+                    <form id="clinicReviewForm" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="reviewName" class="form-label fw-semibold text-dark">Your Name</label>
+                            <input type="text" class="form-control rounded-pill px-3" id="reviewName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="reviewPetName" class="form-label fw-semibold text-dark">Pet's Name</label>
+                            <input type="text" class="form-control rounded-pill px-3" id="reviewPetName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="reviewPetType" class="form-label fw-semibold text-dark">Pet Type</label>
+                            <select class="form-select rounded-pill px-3" id="reviewPetType" required>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="bird">Bird</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold text-dark d-block">Rating</label>
+                            <div class="star-rating d-flex gap-1 py-1">
+                                <i class="fa-solid fa-star text-warning cursor-pointer star-btn" data-val="1"></i>
+                                <i class="fa-solid fa-star text-warning cursor-pointer star-btn" data-val="2"></i>
+                                <i class="fa-solid fa-star text-warning cursor-pointer star-btn" data-val="3"></i>
+                                <i class="fa-solid fa-star text-warning cursor-pointer star-btn" data-val="4"></i>
+                                <i class="fa-solid fa-star text-warning cursor-pointer star-btn" data-val="5"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="reviewQuote" class="form-label fw-semibold text-dark">Your Review</label>
+                            <textarea class="form-control rounded-4 p-3" id="reviewQuote" rows="3" required></textarea>
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-teal text-white fw-semibold rounded-pill px-5 py-2 shadow-sm">Submit Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{% static 'js/testimonials.js' %}"></script>

@@ -1,0 +1,63 @@
+.testimonials-section {
+    background-color: #ffffff !important;
+}
+.testimonial-filters .btn-outline-teal {
+    color: #0d9488;
+    border-color: #0d9488;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+.testimonial-filters .btn-outline-teal:hover,
+.testimonial-filters .btn-outline-teal.active {
+    background-color: #0d9488 !important;
+    border-color: #0d9488 !important;
+    color: #ffffff !important;
+}
+.testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #f8fafc;
+    border-radius: 1.25rem;
+}
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+}
+.quote-icon {
+    opacity: 0.15;
+}
+.text-teal-light {
+    color: #0d9488 !important;
+}
+.avatar {
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+.review-form-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.5rem;
+}
+.star-btn {
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+}
+.star-btn:hover {
+    transform: scale(1.2);
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.testimonial-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.testimonial-item.hide-item {
+    opacity: 0;
+    transform: scale(0.9);
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    overflow: hidden;
+}

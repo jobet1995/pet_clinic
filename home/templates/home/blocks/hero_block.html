@@ -1,0 +1,43 @@
+{% load static wagtailimages_tags %}
+<link rel="stylesheet" href="{% static 'css/hero.css' %}">
+<section class="hero-section position-relative d-flex align-items-center overflow-hidden">
+    {% if self.image %}
+        {% image self.image original as bg_img %}
+        <div class="hero-bg position-absolute top-0 start-0 w-100 h-100" style="background-image: url('{{ bg_img.url }}');"></div>
+    {% else %}
+        <div class="hero-bg position-absolute top-0 start-0 w-100 h-100 default-hero-bg"></div>
+    {% endif %}
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+    <div class="container position-relative z-3 py-5">
+        <div class="row align-items-center min-vh-75 py-5">
+            <div class="col-lg-8 col-xl-7 hero-content">
+                <h1 class="display-3 fw-bold text-white mb-4 hero-title">
+                    {{ self.title }}
+                </h1>
+                {% if self.subtitle %}
+                    <p class="lead text-white-50 mb-5 fs-4 hero-subtitle">
+                        {{ self.subtitle }}
+                    </p>
+                {% endif %}
+                <div class="d-flex flex-wrap gap-3 hero-actions">
+                    {% if self.primary_button and self.primary_button.text %}
+                        <a href="{% if self.primary_button.link_page %}{{ self.primary_button.link_page.url }}{% elif self.primary_button.link_url %}{{ self.primary_button.link_url }}{% else %}#{% endif %}" class="btn btn-lg btn-gradient px-4 py-3 text-white fw-semibold rounded-pill shadow-lg">
+                            {{ self.primary_button.text }}
+                        </a>
+                    {% endif %}
+                    {% if self.secondary_button and self.secondary_button.text %}
+                        <a href="{% if self.secondary_button.link_page %}{{ self.secondary_button.link_page.url }}{% elif self.secondary_button.link_url %}{{ self.secondary_button.link_url }}{% else %}#{% endif %}" class="btn btn-lg btn-outline-light px-4 py-3 fw-semibold rounded-pill">
+                            {{ self.secondary_button.text }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-wave position-absolute bottom-0 start-0 w-100 overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="d-block w-100 position-relative" style="height: 40px; fill: var(--bs-body-bg, #ffffff);">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,90.41,26.85,183.08,50.7,263.29,67.23,321.39,56.44Z"></path>
+        </svg>
+    </div>
+</section>
+<script src="{% static 'js/hero.js' %}"></script>

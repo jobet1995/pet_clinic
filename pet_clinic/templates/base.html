@@ -26,6 +26,8 @@
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/all.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/pet_clinic.css' %}">
 
         {% block extra_css %}
@@ -35,12 +37,17 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+        {% include "includes/navbar.html" %}
 
-        {% block content %}{% endblock %}
+        <main class="flex-grow-1">
+            {% block content %}{% endblock %}
+        </main>
+        {% include "includes/footer.html" %}
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/pet_clinic.js' %}"></script>
 
         {% block extra_js %}

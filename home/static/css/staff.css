@@ -1,0 +1,36 @@
+.staff-section {
+    background-color: #f1f5f9 !important;
+}
+.staff-card {
+    border-radius: 1.25rem;
+    background: #ffffff;
+}
+.staff-photo {
+    height: 280px;
+    object-fit: cover;
+    transform: scale(1);
+}
+.staff-card:hover .staff-photo {
+    transform: scale(1.08);
+}
+.staff-overlay {
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 70%, rgba(15, 23, 42, 0.1) 100%);
+    backdrop-filter: blur(1px);
+}
+.staff-card:hover .staff-overlay {
+    opacity: 1 !important;
+}
+.staff-bio-preview {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+.offcanvas {
+    width: 400px !important;
+    background-color: #f8fafc;
+}
+.offcanvas-header {
+    background-color: #0f172a !important;
+}
+.drawer-avatar-placeholder {
+    font-size: 2rem;
+}

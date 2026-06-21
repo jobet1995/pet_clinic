@@ -1,0 +1,34 @@
+{
+    "Stethoscope / Checkup": {
+        "description": "Comprehensive physical examinations to monitor your pet's vital signs, weight, coat quality, and overall body wellness.",
+        "icon": "fa-stethoscope"
+    },
+    "Syringe / Vaccination": {
+        "description": "Routine core and non-core vaccinations tailored to protect your pet against viral infections and common pathogens.",
+        "icon": "fa-syringe"
+    },
+    "Scissors / Grooming": {
+        "description": "Professional washing, trimming, styling, nail clipping, and ear cleaning services to keep your pet looking and feeling great.",
+        "icon": "fa-scissors"
+    },
+    "Dog Shield / Prevention": {
+        "description": "Flea, tick, heartworm, and parasite prevention plans customized to your pet's lifestyle, habits, and outdoor exposures.",
+        "icon": "fa-shield-dog"
+    },
+    "Bone / Nutrition": {
+        "description": "Expert dietary and weight management consultations to support optimal digestion, joints, coat health, and longevity.",
+        "icon": "fa-bone"
+    },
+    "Medical House / Emergency": {
+        "description": "24/7 urgent care and triage services for critical cases, poison exposure, traumatic injuries, or acute illnesses.",
+        "icon": "fa-house-medical"
+    },
+    "Pills / Pharmacy": {
+        "description": "A fully stocked on-site veterinary pharmacy supplying verified prescriptions, supplements, and specialized medications.",
+        "icon": "fa-pills"
+    },
+    "Heart / Surgery": {
+        "description": "Sophisticated surgical procedures, minor or major, handled under strict general anesthesia monitoring protocols.",
+        "icon": "fa-heartpulse"
+    }
+}

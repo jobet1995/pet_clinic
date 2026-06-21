@@ -1,0 +1,63 @@
+.services-section {
+    background-color: #f8fafc !important;
+}
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.service-card {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #ffffff;
+    border-radius: 1rem;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02) !important;
+}
+.service-icon {
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+.bg-teal-light {
+    background-color: rgba(13, 148, 136, 0.1);
+}
+.text-teal {
+    color: #0d9488 !important;
+}
+.bg-teal {
+    background-color: #0d9488 !important;
+}
+.btn-teal {
+    background-color: #0d9488 !important;
+    border-color: #0d9488 !important;
+    transition: all 0.3s ease;
+}
+.btn-teal:hover {
+    background-color: #0f766e !important;
+    border-color: #0f766e !important;
+}
+.btn-link {
+    text-decoration: none;
+}
+.btn-link:hover .icon-arrow {
+    transform: translateX(4px);
+}
+.max-w-2xl {
+    max-width: 42rem;
+}
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.modal-content {
+    border-radius: 1.5rem;
+    background-color: #ffffff;
+}
+.modal-service-icon {
+    width: 70px;
+    height: 70px;
+}

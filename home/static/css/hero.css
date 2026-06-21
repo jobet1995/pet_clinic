@@ -1,0 +1,64 @@
+.hero-section {
+    min-height: 80vh;
+    background-color: #0b0f19;
+}
+.hero-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.05);
+    transition: transform 10s ease-out;
+}
+.hero-bg.zoom-effect {
+    transform: scale(1);
+}
+.default-hero-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+}
+.hero-overlay {
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.3) 100%);
+    backdrop-filter: blur(2px);
+}
+.hero-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-subtitle {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+.hero-actions {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+.hero-fade-in .hero-title,
+.hero-fade-in .hero-subtitle,
+.hero-fade-in .hero-actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+.btn-gradient {
+    background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+    border: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #0f766e 0%, #0369a1 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);
+}
+.btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+.btn-outline-light:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+.hero-wave {
+    z-index: 4;
+}
